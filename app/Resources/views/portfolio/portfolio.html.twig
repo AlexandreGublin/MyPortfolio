@@ -1,0 +1,875 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Personal Portfolio">
+
+    <!-- Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <!-- Font Awesome CSS -->
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet" media="screen">
+    <!-- Animate css -->
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <!-- Magnific css -->
+    <link href="{{ asset('css/magnific-popup.css') }}" rel="stylesheet">
+    <!-- Custom styles CSS -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" media="screen">
+    <!-- Responsive CSS -->
+    <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="{{ asset('images/ico/favicon.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('images/ico/apple-touch-icon-144-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('images/ico/apple-touch-icon-114-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('images/ico/apple-touch-icon-72-precomposed.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('images/ico/apple-touch-icon-57-precomposed.png') }}">
+    <!-- /head-->
+
+{% endblock %}
+
+
+{% block body %}
+    <!-- Preloader -->
+    <div id="tt-preloader">
+        <div id="pre-status">
+            <div class="preload-placeholder"></div>
+        </div>
+    </div>
+
+    <!-- Home Section -->
+    <section id="home" class="tt-fullHeight" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+        <div class="intro">
+            <div class="intro-sub">Alexandre Gublin</div>
+            <h1>Developpeur <span>Mobile</span> et <span>Web</span></h1>
+            <p>I am a fully professional freelance creative User Interface Designer &amp; Developer<br> Involving with latest web designing and technologies is a great <br> feel free to contact creative.</p>
+
+            {#<div class="social-icons">
+                <ul class="list-inline">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                </ul>
+            </div> <!-- /.social-icons -->#}
+        </div>
+
+        <div class="mouse-icon">
+            <div class="wheel"></div>
+        </div>
+    </section><!-- End Home Section -->
+
+
+
+
+    <!-- Navigation -->
+    <header class="header">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ url('portfolio') }}">Alexandre Gublin</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="custom-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">A propros</a></li>
+                        <li><a href="#resume">Parcours</a></li>
+                        {#<li><a href="#skills">Compétences</a></li>#}
+                        <li><a href="#works">Galerie</a></li>
+                        <!--<li><a href="#blog">Blog</a></li>-->
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div><!-- .container -->
+        </nav>
+    </header><!-- End Navigation -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <h2 class="section-title wow fadeInUp">A propos</h2>
+
+            <div class="row">
+
+                <div class="col-md-4 col-md-push-8">
+                    <div class="biography">
+                        <div class="myphoto">
+                            {#{{ asset('images/myphoto.jpg') }}#}
+                            <img id="imgpProfil" src="{{ asset('images/imgProfil4.png') }}" alt="">
+                        </div>
+                        <ul>
+                            <li><strong>Nom :</strong> Alexandre Gublin</li>
+                            <li><strong>Date de naissance :</strong> 27/01/1997</li>
+                            <li><strong>adresse :</strong> Saleilles, France</li>
+                            <li><strong>Nationalité :</strong> Française</li>
+                            <li><strong>Tel :</strong> 06 16 73 39 76</li>
+                            <li><strong>Email :</strong> alexandre.gublin@imerir.com</li>
+                        </ul>
+                    </div>
+                </div> <!-- col-md-4 -->
+
+                <div class="col-md-8 col-md-pull-4">
+                    <div class="short-info wow fadeInUp">
+                        <h3>Objectif</h3>
+                            <p>Actuellement en formation BAC +3 à IMERIR pour développer mes compétences
+                                en développement d'applications mobiles natives. J'ai choisie cette formation
+                                en accord avec mon projet professionnel, qui, grâce à mes années d'expériences
+                                en Web me permettre d'être polyvalent dans les deux tout en les combinant.
+                            </p>
+                    </div>
+
+                    <div class="short-info wow fadeInUp">
+                        <h3>Profile</h3>
+                        <ul class="list-check">
+                            <li>Curieux</li>
+                            <li>Impliqué</li>
+                            <li>Travaille d’équipe</li>
+                            <li>Autonome</li>
+                            <li>Perfectionniste</li>
+                        </ul>
+                    </div>
+
+
+                    <div class="short-info wow fadeInUp">
+                        <h3>Compétences</h3>
+                        <ul class="list-check">
+                            <li>PHP7</li>
+                            <li>Web-service</li>
+                            <li>Modèle MVC (Symfony 3)</li>
+                            <li>Méthodologie et gestion BDD</li>
+                            <li>Programmation Orientée Objet</li>
+                            <li>C#, Visual Studio</li>
+                            <li>Android Studio, Java </li>
+                            <li>Xcode , Swift</li>
+                            <li>html5/css3, bootsrap, Responsive Design</li>
+                        </ul>
+                    </div>
+
+                    {#<div class="my-signature">
+                        <img src="{{ asset('images/sign.png') }}" alt="">
+                    </div>#}
+
+                    <div class="download-button">
+                        <a class="btn btn-info btn-lg" href="#contact"><i class="fa fa-paper-plane"></i>M'envoyer un message</a>
+                        <a class="btn btn-primary btn-lg" href="{{ asset('cv/GUBLIN_CV.pdf') }}"><i class="fa fa-download"></i>télécharge mon cv</a>
+                    </div>
+                </div>
+
+
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+    </section><!-- End About Section -->
+
+
+    <!-- Video Section -->
+    <section id="video" class="video-section">
+        <div class="tf-bg-overlay">
+            <div class="container">
+                <div class="control">
+                    <!--<div class="video-intro text-center">-->
+                    <!--<button type="button" class="play-trigger" data-toggle="modal" data-target="#tour-video"><i class="fa fa-play"></i></button>-->
+                    <!--<h2>Video Introducing</h2>-->
+                    <!--</div>-->
+                    <!---->
+                    <!--&lt;!&ndash; Video Modal &ndash;&gt;-->
+                    <!--<div class="modal modal-video" id="tour-video">-->
+                    <!--<div class="modal-dialog modal-lg">-->
+                    <!--<div class="modal-content">-->
+                    <!--<div class="modal-header">-->
+                    <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
+                    <!--<h4 class="modal-title">Video Tour</h4>-->
+                    <!--</div>-->
+                    <!--<div class="modal-body">-->
+                    <!--<div class="video-container">-->
+                    <!--<iframe src="http://player.vimeo.com/video/118119037" name="vimeoplayer" id="nofocusvideo" width="500" height="281"></iframe>-->
+                    <!--</div>&lt;!&ndash;/.video-container&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;/.modal-body&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;/.modal-content&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;/.modal-dialog&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;/.modal&ndash;&gt;                    -->
+                </div>
+                <!--/.control-->
+            </div>
+            <!--/.container-->
+        </div>
+        <!--/.overlay-->
+    </section>
+    <!-- /.Video Section -->
+
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume-section section-padding">
+        <div class="container">
+            <h2 class="section-title wow fadeInUp">Parcours</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="resume-title">
+                        <h3>Formations</h3>
+                    </div>
+                    <div class="resume">
+                        <ul class="timeline">
+                            <li>
+                                <div class="posted-date">
+                                    <span class="month">2017-2018</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Formation CDSM Bac +3</h3>
+                                            <span>Imerir, Avenue Paul Pascot, BP 90443, 66004 Perpignan</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>Licence spécialisée dans la conception et le développement d'applications mobiles natives pour Android et IOS ainsi que les WebServices. En cour.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div><!-- /timeline-panel -->
+                            </li>
+
+                            <li class="timeline-inverted">
+                                <div class="posted-date">
+                                    <span class="month">2015-2017</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>BTS SIO Option SLAM</h3>
+                                            <span>Lycée Jean Lurçat, 25 Avenue Albert Camus, 66000 Perpignan</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>Développement web, solutions logicielles et applications métier. Obtenu.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div> <!-- /timeline-panel -->
+                            </li>
+
+                            <li>
+                                <div class="posted-date">
+                                    <span class="month">2012-2015</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>BAC PRO SEN (mention Bien)</h3>
+                                            <span>Lycée Charles Blanc, Rue Charles Blanc, 66000 Perpignan</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p>Système, Electronique, Numérique. Obtenu mention Bien.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div><!-- /timeline-panel -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /row -->
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="resume-title">
+                        <h3>Experience</h3>
+                    </div>
+                    <div class="resume">
+                        <ul class="timeline">
+                            <li class="timeline-inverted">
+                                <div class="posted-date">
+                                    <span class="month">2017</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Stage developpement web (7 semaines)</h3>
+                                            <span>Dialogue de Sourds, entreprise de communication et webmarketing situé au 23 Rue Claude Bernard, 66000 Perpignan</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p> - Création d’un site e-commerce sous le Framework Symfony3<br>
+                                                - Autonomie partielle sur le projet (bilan quotidien avec le manageur)<br>
+                                                - Suivi du cahier des charges et des instructions fournies.</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div> <!-- /timeline-panel -->
+                            </li>
+
+                            <li>
+                                <div class="posted-date">
+                                    <span class="month">2016</span>
+                                </div><!-- /posted-date -->
+
+                                <div class="timeline-panel wow fadeInUp">
+                                    <div class="timeline-content">
+                                        <div class="timeline-heading">
+                                            <h3>Stage developpement web (5 semaines)</h3>
+                                            <span>Coming-Web, agence de création de site internet situé au 180 Rue James Watt, 66100 Perpignan</span>
+                                        </div><!-- /timeline-heading -->
+
+                                        <div class="timeline-body">
+                                            <p> - Développement d'un espace interactif en Jquery et Ajax<br>
+                                                - Recherche et auto-formation sur des technologies<br>
+                                                - Évolution sur le projet en autonomie</p>
+                                        </div><!-- /timeline-body -->
+                                    </div> <!-- /timeline-content -->
+                                </div><!-- /timeline-panel -->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /row -->
+        </div><!-- /.container -->
+    </section><!-- End Resume Section -->
+
+
+    <!-- Skills Section -->
+    {#<section id="skills" class="skills-section section-padding">
+        <div class="container">
+            <h2 class="section-title wow fadeInUp">Compétences</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-progress">
+                        <div class="skill-title"><h3>UX Design</h3></div>
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
+                            </div>
+                        </div><!-- /.progress -->
+                    </div><!-- /.skill-progress -->
+
+                    <div class="skill-progress">
+                        <div class="skill-title"><h3>Visual Design</h3></div>
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" ><span>80%</span>
+                            </div>
+                        </div><!-- /.progress -->
+                    </div><!-- /.skill-progress -->
+                    <div class="skill-progress">
+                        <div class="skill-title"><h3>Business Design</h3></div>
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" ><span>75%</span>
+                            </div>
+                        </div><!-- /.progress -->
+                    </div><!-- /.skill-progress -->
+                </div><!-- /.col-md-6 -->
+
+                <div class="col-md-6">
+                    <div class="skill-progress">
+                        <div class="skill-title"><h3>Branding Design</h3></div>
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" ><span>95%</span>
+                            </div>
+                        </div><!-- /.progress -->
+                    </div><!-- /.skill-progress -->
+                    <div class="skill-progress">
+                        <div class="skill-title"><h3>Motion Graphic</h3></div>
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" ><span>80%</span>
+                            </div>
+                        </div><!-- /.progress -->
+                    </div><!-- /.skill-progress -->
+                    <div class="skill-progress">
+                        <div class="skill-title"><h3>Flyers Designing</h3></div>
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" ><span>75%</span>
+                            </div>
+                        </div><!-- /.progress -->
+                    </div><!-- /.skill-progress -->
+                </div><!-- /.col-md-6 -->
+            </div><!-- /.row -->
+
+            <div class="skill-chart text-center">
+                <h3>More skills</h3>
+            </div>
+
+            <div class="row more-skill text-center">
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <div class="chart" data-percent="91" data-color="e74c3c">
+                        <span class="percent"></span>
+                        <div class="chart-text">
+                            <span>leadership</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <div class="chart" data-percent="23" data-color="2ecc71">
+                        <span class="percent"></span>
+                        <div class="chart-text">
+                            <span>Creativity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <div class="chart" data-percent="68" data-color="3498db">
+                        <span class="percent"></span>
+                        <div class="chart-text">
+                            <span>Management</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <div class="chart" data-percent="68" data-color="3498db">
+                        <span class="percent"></span>
+                        <div class="chart-text">
+                            <span>Branding</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <div class="chart" data-percent="68" data-color="3498db">
+                        <span class="percent"></span>
+                        <div class="chart-text">
+                            <span>Marketing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-2">
+                    <div class="chart" data-percent="68" data-color="3498db">
+                        <span class="percent"></span>
+                        <div class="chart-text">
+                            <span>Motivation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.container -->
+    </section><!-- End Skills Section -->#}
+
+
+    <!-- Works Section -->
+    <section id="works" class="works-section section-padding">
+        <div class="container">
+            <h2 class="section-title wow fadeInUp">Galerie</h2>
+
+            <ul class="list-inline" id="filter">
+                <li><a class="active" data-group="all">All</a></li>
+                <li><a data-group="web">Web</a></li>
+                <li><a data-group="mobile">Mobile</a></li>
+            </ul>
+
+            <div class="row">
+                <div id="grid">
+                    <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "web"]'>
+                        <div class="portfolio-bg">
+                            <div class="portfolio">
+                                <div class="tt-overlay"></div>
+                                <div class="links">
+                                    <a class="image-link" href="{{ asset('images/img_site_web2.png') }}"><i class="fa fa-search-plus"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div><!-- /.links -->
+                                <img class="taille_img" src="{{ asset('images/img_site_web2.png') }}" alt="image">
+                                <div class="portfolio-info">
+                                    <h3>Portfolio Title</h3>
+                                </div><!-- /.portfolio-info -->
+                            </div><!-- /.portfolio -->
+                        </div><!-- /.portfolio-bg -->
+                    </div><!-- /.portfolio-item -->
+                    <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "mobile"]'>
+                        <div class="portfolio-bg">
+                            <div class="portfolio">
+                                <div class="tt-overlay"></div>
+                                <div class="links">
+                                    <a class="image-link" href="{{ asset('images/img_app_mobile_1.png') }}"><i class="fa fa-search-plus"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div><!-- /.links -->
+                                <img class="taille_img" src="{{ asset('images/img_app_mobile_1.png') }}" alt="image">
+                                <div class="portfolio-info">
+                                    <h3>Portfolio Title</h3>
+                                </div><!-- /.portfolio-info -->
+                            </div><!-- /.portfolio -->
+                        </div><!-- /.portfolio-bg -->
+                    </div><!-- /.portfolio-item -->
+                    <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "mobile"]'>
+                        <div class="portfolio-bg">
+                            <div class="portfolio">
+                                <div class="tt-overlay"></div>
+                                <div class="links">
+                                    <a class="image-link" href="{{ asset('images/img_app_mobile_3.png') }}"><i class="fa fa-search-plus"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div><!-- /.links -->
+                                <img class="taille_img" src="{{ asset('images/img_app_mobile_3.png') }}" alt="image">
+                                <div class="portfolio-info">
+                                    <h3>Portfolio Title</h3>
+                                </div><!-- /.portfolio-info -->
+                            </div><!-- /.portfolio -->
+                        </div><!-- /.portfolio-bg -->
+                    </div><!-- /.portfolio-item -->
+                    <div class="portfolio-item col-xs-12 col-sm-4 col-md-3" data-groups='["all", "mobile"]'>
+                        <div class="portfolio-bg">
+                            <div class="portfolio">
+                                <div class="tt-overlay"></div>
+                                <div class="links">
+                                    <a class="image-link" href="{{ asset('images/img_app_mobile_2.png') }}"><i class="fa fa-search-plus"></i></a>
+                                    <a href="#"><i class="fa fa-link"></i></a>
+                                </div><!-- /.links -->
+                                <img class="taille_img" src="{{ asset('images/img_app_mobile_2.png') }}" alt="image">
+                                <div class="portfolio-info">
+                                    <h3>Portfolio Title</h3>
+                                </div><!-- /.portfolio-info -->
+                            </div><!-- /.portfolio -->
+                        </div><!-- /.portfolio-bg -->
+                    </div><!-- /.portfolio-item -->
+                </div><!-- /#grid -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- End Works Section -->
+
+
+    <section id="facts" class="facts-section text-center" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">
+        <div class="tt-overlay-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--<div class="count-wrap">-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<i class="fa fa-flask"></i>-->
+                        <!--<h3 class="timer">7</h3>-->
+                        <!--<p>Years of Experience</p>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6"> -->
+                        <!--<i class="fa fa-thumbs-up"></i>-->
+                        <!--<h3 class="timer">651</h3>                -->
+                        <!--<p>Projects Done</p>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<i class="fa fa-users"></i>-->
+                        <!--<h3 class="timer">251</h3> -->
+                        <!--<p>Happy Clients</p>-->
+                        <!--</div>-->
+                        <!--<div class="col-sm-3 col-xs-6">-->
+                        <!--<i class="fa fa-trophy"></i>-->
+                        <!--<h3 class="timer">5</h3> -->
+                        <!--<p>Awards Won</p>-->
+                        <!--</div>-->
+                        <!--</div>&lt;!&ndash; /count-wrap &ndash;&gt;-->
+                    </div><!-- /.col-md-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div>
+    </section> <!-- End Facts Section -->
+
+
+    <!-- Blog Section -->
+    <!--<section id="blog" class="latest-blog-section section-padding">-->
+    <!--<div class="container">-->
+    <!--<h2 class="section-title wow fadeInUp">Latest Post</h2>-->
+
+    <!--<div class="row">-->
+    <!--<div class="col-sm-4">-->
+    <!--<article class="blog-post-wrapper">-->
+    <!--<div class="figure">    -->
+    <!--<div class="post-thumbnail">-->
+    <!--<a href="#"><img src="assets/images/blog/01.jpg" class="img-responsive " alt=""></a>-->
+    <!--</div>-->
+    <!--<i class="fa fa-file-photo-o"></i>-->
+    <!--</div>&lt;!&ndash; /.figure &ndash;&gt;-->
+    <!--<header class="entry-header">-->
+    <!--<div class="post-meta">-->
+    <!--<span class="the-category"> -->
+    <!--<a href="#">Print Design,</a> <a href="#">Photoshop</a>-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--<h2 class="entry-title"><a href="blog-single.html" rel="">Common fonts used for newspaper template design</a></h2>-->
+    <!--<hr>-->
+    <!--<div class="entry-meta">-->
+    <!--<ul class="list-inline">-->
+    <!--<li>-->
+    <!--<span class="the-author">-->
+    <!--<a href="#">Admin</a> -->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-time">-->
+    <!--<a href="#">06 Jan 2015</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-share">-->
+    <!--<a href="#" title="share">30</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-comments">-->
+    <!--<a href="#" title="">05</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+    <!--</header>&lt;!&ndash; .entry-header &ndash;&gt;-->
+    <!--</article>-->
+    <!--</div>&lt;!&ndash; /.col-sm-4 &ndash;&gt;-->
+    <!--<div class="col-sm-4">-->
+    <!--<article class="blog-post-wrapper">-->
+    <!--<div class="figure">    -->
+    <!--<div class="post-thumbnail">-->
+    <!--<a href="#"><img src="assets/images/blog/02.jpg" class="img-responsive " alt=""></a>-->
+    <!--</div>-->
+    <!--<i class="fa fa-file-video-o"></i>-->
+    <!--</div>&lt;!&ndash; /.figure &ndash;&gt;-->
+    <!--<header class="entry-header">-->
+    <!--<div class="post-meta">-->
+    <!--<span class="the-category"> -->
+    <!--<a href="#">Print Design,</a> <a href="#">Photoshop</a>-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--<h2 class="entry-title"><a href="blog-single.html" rel="">What is the style of font called that is typically</a></h2>-->
+    <!--<hr>-->
+    <!--<div class="entry-meta">-->
+    <!--<ul class="list-inline">-->
+    <!--<li>-->
+    <!--<span class="the-author">-->
+    <!--<a href="#">Admin</a> -->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-time">-->
+    <!--<a href="#">06 Jan 2015</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-share">-->
+    <!--<a href="#" title="share">30</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-comments">-->
+    <!--<a href="#" title="">05</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+    <!--</header>&lt;!&ndash; .entry-header &ndash;&gt;-->
+    <!--</article>-->
+    <!--</div>&lt;!&ndash; /.col-sm-4 &ndash;&gt;-->
+    <!--<div class="col-sm-4">-->
+    <!--<article class="blog-post-wrapper">-->
+    <!--<div class="figure">    -->
+    <!--<div class="post-thumbnail">-->
+    <!--<a href="#"><img src="assets/images/blog/03.jpg" class="img-responsive " alt=""></a>-->
+    <!--</div>-->
+    <!--<i class="fa fa-quote-left"></i>-->
+    <!--</div>&lt;!&ndash; /.figure &ndash;&gt;-->
+    <!--<header class="entry-header">-->
+    <!--<div class="post-meta">-->
+    <!--<span class="the-category"> -->
+    <!--<a href="#">Print Design,</a> <a href="#">Photoshop</a>-->
+    <!--</span>-->
+    <!--</div>-->
+    <!--<h2 class="entry-title"><a href="blog-single.html" rel="">How to create a print ready brochure using photoshop</a></h2>-->
+    <!--<hr>-->
+    <!--<div class="entry-meta">-->
+    <!--<ul class="list-inline">-->
+    <!--<li>-->
+    <!--<span class="the-author">-->
+    <!--<a href="#">Admin</a> -->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-time">-->
+    <!--<a href="#">06 Jan 2015</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-share">-->
+    <!--<a href="#" title="share">30</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<span class="the-comments">-->
+    <!--<a href="#" title="">05</a>-->
+    <!--</span>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>&lt;!&ndash; .entry-meta &ndash;&gt;-->
+    <!--</header>&lt;!&ndash; .entry-header &ndash;&gt;-->
+    <!--</article>-->
+    <!--</div>&lt;!&ndash; /.col-md-4 &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; /.row &ndash;&gt;-->
+    <!--<div class="blog-more text-center">-->
+    <!--<a href="#" class="btn btn-primary">View More</a>-->
+    <!--</div>-->
+    <!---->
+    <!--</div>&lt;!&ndash; /.container &ndash;&gt;-->
+    <!--</section>&lt;!&ndash; End Blog Section &ndash;&gt;-->
+
+
+    <!-- Hire Section -->
+    {#<section class="hire-section text-center" data-stellar-vertical-offset="50" data-stellar-background-ratio="0.2">#}
+    {#<div class="hire-section-bg">#}
+    {#<div class="container">#}
+    {#<div class="row">#}
+    {#<div class="col-md-12">#}
+    {#<h2>I'm available for freelance project</h2>#}
+    {#<a href="#" class="btn btn-default">Get Hired</a>#}
+    {#</div><!--&lt;!&ndash; /.col-md-12 &ndash;&gt;-->#}
+    {#</div><!--&lt;!&ndash; /.row &ndash;&gt;-->#}
+    {#</div><!--&lt;!&ndash; /.container &ndash;&gt;-->#}
+    {#</div><!--&lt;!&ndash; /.hire-section-bg &ndash;&gt;-->#}
+    {#</section><!--&lt;!&ndash; End Hire Section &ndash;&gt;-->#}
+
+
+    {#  background-clip:  #}
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <h2 class="section-title wow fadeInUp">Contact</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        <strong>Contactez-moi : </strong>
+                        {# Début du formulaire #}
+                        {{ form_start(form, {'method': 'POST'}) }}
+                        {# Afficher les erreurs du formulaire #}
+                        {{ form_errors(form) }}
+
+                        <div class="form-group">
+                            {{ form_row(form.nom) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.email) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.sujet) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_row(form.message) }}
+                        </div>
+
+
+                        <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
+                        {{ form_end(form) }}
+
+                    </div>
+                </div><!-- /.col-md-6 -->
+
+                <div class="col-md-6">
+                    <div class="row center-xs">
+                        <div class="col-sm-6">
+                            <i class="fa fa-map-marker"></i>
+                            <address>
+                                <strong>Adresse</strong>
+                                2 rue Alfred Kastler,<br>
+                                66280 Saleilles<br>
+                            </address>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <i class="fa fa-mobile"></i>
+                            <div class="contact-number">
+                                <strong>Numéro de téléphone</strong>
+                                06 16 73 39 76
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="location-map">
+                                <div id="map" class="map-canvas">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- End Contact Section -->
+
+
+    <!-- Footer Section -->
+    <footer class="footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright text-center">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- End Footer Section -->
+
+
+    <!-- Scroll-up -->
+    <div class="scroll-up">
+        <a href="#home"><i class="fa fa-angle-up"></i></a>
+    </div>
+
+    <script>
+        function initMap() {
+            var uluru = {lat: 42.6584412, lng: 2.939244400000007};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+
+    <!-- /Body-->
+{% endblock %}
+
+{% block javascripts %}
+
+    <!-- Javascript files -->
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('js/smoothscroll.js') }}"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.countTo.js') }}"></script>
+    <script src="{{ asset('js/jquery.inview.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.easypiechart.js') }}"></script>
+    <script src="{{ asset('js/jquery.shuffle.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+    <script src="{{ asset('js/jquery.fitvids.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcqrJ7rHj3z2ujGDqBxb_3RXvNPfoCfOs&callback=initMap">
+    </script>
+
+    <!-- /js-->
+{% endblock %}
