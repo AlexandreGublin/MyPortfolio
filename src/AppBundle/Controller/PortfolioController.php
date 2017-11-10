@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,12 +15,21 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 class PortfolioController extends Controller
 {
 
+    private $em;
+    public function __construct(EntityManager $entityManager)
+    {
+        $this->em= $entityManager;
+    }
+
+
     /**
      * @Route("/", name="portfolio")
      */
     public function showPortfolioAction(Request $request)
     {
         $cleanName = $cleanEmail = $cleanSubject = $cleanData = $result = null;
+
+        $images = $this->em->getRepository("AppBundle:Image")->findAll();
 
         //Création d'un formulaire sans entité
         $form = $this->createFormBuilder()
@@ -75,15 +85,10 @@ class PortfolioController extends Controller
         }
 
         //Renvoyer sur la page contact avec le formulaire
-        return $this->render('portfolio/portfolio.html.twig', array('form' => $form->createView()
+        return $this->render('portfolio/portfolio.html.twig', array(
+            'form' => $form->createView(),
+            'images' => $images
         ));
     }
 
-    /**
-     * @Route("/test/", name="test")
-     */
-    public function testAction()
-    {
-        return $this->render('portfolio/test.html.twig');
-    }
 }
